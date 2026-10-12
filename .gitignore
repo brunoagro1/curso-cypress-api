@@ -1,0 +1,17 @@
+# Dependências: são reinstaladas com "npm install" a partir do package.json/package-lock.json
+node_modules/
+
+# Variáveis de ambiente com dados sensíveis (tokens, senhas, URLs privadas).
+# O example.env é versionado como modelo, sem valores reais.
+.env
+
+# Artefatos gerados pelo Cypress a cada execução
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+
+# Arquivos do sistema operacional e do editor
+.DS_Store
+Thumbs.db
+.vscode/
