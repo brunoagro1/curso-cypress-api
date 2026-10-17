@@ -15,7 +15,6 @@ describe("API - Geração de Token ", () => {
       expect(response.body.scope).to.include("agroconecta-user");
     });
   });
-
   it("Não gerar token com senha inválida", () => {
     cy.gerarToken({ password: "senha-errada" }).then((response) => {
       expect(response.status).to.eq(401);
