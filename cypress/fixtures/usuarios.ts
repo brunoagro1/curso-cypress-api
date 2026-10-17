@@ -1,21 +1,19 @@
 import { faker } from "@faker-js/faker";
-import { CriarUsuarioParams } from "../interfaces/usuario";
+import { CriarUsuarioParams, EditarUsuarioParams } from "../interfaces/usuario";
 
 export const usuarioPrincipal = {
-  email: "bruno.vieira@agro1.inf.br",
-  id: "01a06c8c-a7cb-7696-a935-1af24e74fb78",
+  email: Cypress.expose("username"),
+  password: Cypress.expose("password"),
 };
 
 export const usuarioSemPermissao = {
   email: "bruno.vieira+1@agro1.inf.br",
-  id: "01a08124-0685-7679-b54d-8bce434f8bf5",
-  password: Cypress.expose("AUTH_USER_INVALID_SCENARIOS"),
+  password: Cypress.expose("AUTH_USER_INVALID_PASSWORD_SCENARIOS"),
 };
 
 export const usuarioInativo = {
   email: "bruno.vieira+35@agro1.inf.br",
-  id: "01a0f7a1-5a34-75a3-b52a-8fff5df208d0",
-  password: Cypress.expose("AUTH_USER_INVALID_SCENARIOS"),
+  password: Cypress.expose("AUTH_USER_INVALID_PASSWORD_SCENARIOS"),
 };
 
 export const usuarioValido = (): CriarUsuarioParams => ({
@@ -24,4 +22,10 @@ export const usuarioValido = (): CriarUsuarioParams => ({
   email: faker.internet.email(),
   telefone: "(11) 91234-5678",
   status: "active",
+});
+
+export const usuarioEditado = (): EditarUsuarioParams => ({
+  nome: faker.person.fullName(),
+  cargo: "Aplicador",
+  telefone: "(11) 19112-2121",
 });

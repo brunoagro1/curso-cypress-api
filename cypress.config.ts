@@ -9,10 +9,9 @@ export default defineConfig({
     expose: {
       keycloak_url:
         "https://auth-hml.agro1.cloud/realms/agroconecta/protocol/openid-connect/token",
-      client_id: process.env.AUTH_CLIENT_ID,
       username: process.env.AUTH_USERNAME,
       password: process.env.AUTH_PASSWORD,
-      AUTH_USER_INVALID_SCENARIOS: process.env.AUTH_USER_INVALID_SCENARIOS,
+      AUTH_USER_INVALID_PASSWORD_SCENARIOS: process.env.AUTH_USER_INVALID_PASSWORD_SCENARIOS,
     },
     setupNodeEvents(on, config) {
       // implement node event listeners here
